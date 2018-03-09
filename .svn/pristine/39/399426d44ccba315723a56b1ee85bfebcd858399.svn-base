@@ -1,0 +1,59 @@
+<div>
+	<img src="resources/img/logo.jpg" style="height: 96px;;margin-left: 16px">
+	<h1 style="position: absolute; top:15px; left:180px">XXX信息管理系统</h1>
+	<div style="position: absolute;top:0px; right:16px">
+		<ul style="list-style: none">
+			<li style="float: left;cursor: pointer;">
+				<button><i class="fa fa-envelope" style="color: #489fdf">&nbsp;</i>系统消息</button>
+			</li>
+			<li style="float: left;cursor: pointer;margin-left: 12px">
+				<button><i class="fa fa-key" style="color: red">&nbsp;</i>修改密码</button>
+			</li>
+			<li style="float: left;cursor: pointer;margin-left: 12px">
+				<button><i class="fa fa-power-off" style="color: red">&nbsp;</i>退出登录</button>
+			</li>
+		</ul>
+	</div>
+	<div style="position: absolute;top:35px; right:16px">
+		<ul style="list-style: none">
+			<li style="float: left;cursor: pointer;">
+				<i class="fa fa-th-list theme-select" style="color: #489fdf" data-theme=1></i>
+			</li>
+			<li style="float: left;cursor: pointer;margin-left: 12px">
+				<i class="fa fa-th-list theme-select" style="color: #157fcc" data-theme=2></i>
+			</li>
+			<li style="float: left;cursor: pointer;margin-left: 12px">
+				<i class="fa fa-th-list theme-select" style="color: #d7d2d2" data-theme=3></i>
+			</li>
+			<li style="float: left;cursor: pointer;margin-left: 12px">
+				<i class="fa fa-th-list theme-select" style="color: #f5f5f5" data-theme=4></i>
+			</li>
+			<li style="float: left;cursor: pointer;margin-left: 12px">
+				<i class="fa fa-th-list theme-select" style="color: #cbdbef" data-theme=5></i>
+			</li>
+			<li style="float: left;cursor: pointer;margin-left: 12px">
+				<i class="fa fa-th-list theme-select" style="color: #3f4757" data-theme=6></i>
+			</li>
+		</ul>
+	</div>
+</div>
+<script type="text/javascript">
+
+var themes = [
+	'resources/ext/build/classic/theme-triton/resources/theme-triton-all.css',
+	'resources/ext/build/classic/theme-neptune/resources/theme-neptune-all.css',
+	'resources/ext/build/classic/theme-gray/resources/theme-gray-all.css',
+	'resources/ext/build/classic/theme-crisp/resources/theme-crisp-all.css',
+	'resources/ext/build/classic/theme-classic/resources/theme-classic-all.css',
+	'resources/ext/build/classic/theme-aria/resources/theme-aria-all.css'
+];
+
+var nodes = document.getElementsByClassName('theme-select');
+for( i in nodes){
+	nodes[i].onclick = function(){
+		var index = this.getAttribute("data-theme");
+		Ext.util.CSS.swapStyleSheet("theme", themes[index - 1]);
+	}
+}
+
+</script>
